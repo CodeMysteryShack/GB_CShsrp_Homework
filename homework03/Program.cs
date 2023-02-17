@@ -102,6 +102,8 @@
 // 3 -> 1, 8, 27
 // 5 -> 1, 8, 27, 64, 125
 
+// 1-й вариант ф-ция просто выводит строку
+
 // void CubesChain(int num)
 // {
 //   Console.Write($"{num} -> ");
@@ -116,3 +118,32 @@
 // Console.Write("Input N: ");
 // int n = Convert.ToInt32(Console.ReadLine());
 // CubesChain(n);
+
+// 2-й вариант ф-ция возвращает массив, что более переиспользуемо + разнесёны получение ряда чисел и вывод
+
+// int[] CubesChain(int num)
+// {
+//   int[] arr = new int[num];
+
+//   for (int i = 0; i < num; i++)
+//   {
+//     arr[i] = Convert.ToInt32(Math.Pow((i + 1), 3)); // тут ругался error CS0266: Не удается неявно преобразовать тип "double" в "int". Существует явное преобразование (возможно, пропущено приведение типов). Пришлось добавить Convert.ToInt32()
+//   }
+//   return arr;
+// }
+
+// void OutputCubesChain(int[] arr)
+// {
+//   Console.Write($"{arr.Length} -> ");
+
+//   for (int i = 0; i < arr.Length; i++)
+//   {
+//     Console.Write($"{arr[i]}{(i != arr.Length - 1 ? ", " : "")}");
+//   }
+//   Console.WriteLine();
+// }
+
+
+// Console.Write("Input N: ");
+// int n = Convert.ToInt32(Console.ReadLine());
+// OutputCubesChain(CubesChain(n));
