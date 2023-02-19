@@ -29,7 +29,7 @@
 //   Console.WriteLine(isPalindrome(Convert.ToInt32(num)) ? $"{num} is a Palindrome" : $"{num} is not a Palindrome");
 // }
 
-// 2-й вариант. Через строки
+// 2-й вариант. Через строки, работает для числа с любым кол-вом цифр
 // using System;
 // using System.Text.RegularExpressions; // в общем случае, использовал только, чтобы проверить, является ли полученное из терминала 5-значным числом
 
@@ -51,15 +51,57 @@
 // Console.Write("Input 5-digit number: ");
 // string num = Console.ReadLine();
 
-// if (!Regex.IsMatch(num.Trim(), @"^\d{5}$"))
+// if (!Regex.IsMatch(num.Trim(), @"^\d+$"))
 // {
-//   Console.WriteLine("This is not 5-digit number");
+//   Console.WriteLine("This is not а number");
 // }
 // else
 // {
 //   Console.WriteLine(isPalindrome(num) ? $"{num} is a Palindrome" : $"{num} is not a Palindrome");
 // }
 
+// 3-й вариант — универсальный, для числа с любым кол-вом цифр и без строк
+
+// using System;
+// using System.Text.RegularExpressions; // в общем случае, использовал только, чтобы проверить, является ли полученное из терминала 5-значным числом
+
+// int FindPower(int num) // находим кол-во цифр в числе
+// {
+//   int power = 1;
+//   while (num > Math.Pow(10, power))
+//   {
+//     power++;
+//   }
+//   return power;
+// }
+
+// bool isPalindrome(int num)
+// {
+//   int power = FindPower(num);
+//   bool result = true;
+
+//   for (int counter = 1; counter < power / 2; counter++)
+//   {
+//     if (Math.Round(num % Math.Pow(10, counter) / Math.Pow(10, counter - 1)) != Math.Round(num / Math.Pow(10, power - counter)) % 10)
+//     {
+//       result = false;
+//       break;
+//     }
+//   }
+//   return result;
+// }
+
+// Console.Write("Input 5-digit number: ");
+// string num = Console.ReadLine();
+
+// if (!Regex.IsMatch(num.Trim(), @"^\d{5}$"))
+// {
+//   Console.WriteLine("This is not 5-digit number");
+// }
+// else
+// {
+//   Console.WriteLine(isPalindrome(Convert.ToInt32(num)) ? $"{num} is a Palindrome" : $"{num} is not a Palindrome");
+// }
 
 // ==========================================================
 
