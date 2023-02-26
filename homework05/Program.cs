@@ -59,12 +59,9 @@ void PrintResult(int[] array, int result)
 // {
 //   int summ = 0;
 
-//   for (int i = 0; i < array.Length; i++)
+//   for (int i = 0; i < array.Length; i += 2)
 //   {
-//     if ((i + 1) % 2 != 0)
-//     {
-//       summ += array[i];
-//     }
+//     summ += array[i];
 //   }
 
 //   return summ;
@@ -87,55 +84,55 @@ void PrintResult(int[] array, int result)
 
 // [3 7 22 2 78] -> 76
 
-double GetRandomNumber(double minimum, double maximum)
-{
-  Random random = new Random();
-  return random.NextDouble() * (maximum - minimum) + minimum;
-}
+// double GetRandomNumber(double minimum, double maximum)
+// {
+//   Random random = new Random();
+//   return random.NextDouble() * (maximum - minimum) + minimum;
+// }
 
-double[] CreateRandomDoubleArray(int size, double min, double max)
-{
-  double[] array = new double[size];
+// double[] CreateRandomDoubleArray(int size, double min, double max)
+// {
+//   double[] array = new double[size];
 
-  for (int i = 0; i < size; i++)
-  {
-    array[i] = GetRandomNumber(min, max);
-  }
+//   for (int i = 0; i < size; i++)
+//   {
+//     array[i] = GetRandomNumber(min, max);
+//   }
 
-  return array;
-}
+//   return array;
+// }
 
-double MinMaxDiff(double[] array, bool displayMinMax = true)
-{
-  double min = array[0];
-  double max = array[0];
-  foreach (double item in array)
-  {
-    if (min > item) min = item;
-    if (max < item) max = item;
-  }
+// double MinMaxDiff(double[] array, bool displayMinMax = true) // displayMinMax — просто флажок, чтобы показать min / max
+// {
+//   double min = array[0];
+//   double max = array[0];
+//   foreach (double item in array)
+//   {
+//     if (min > item) min = item;
+//     if (max < item) max = item;
+//   }
 
-  if (displayMinMax) Console.WriteLine($"min={min} max={max}"); // для проверки выводим min max
-  return max - min;
-}
+//   if (displayMinMax) Console.WriteLine($"min={min} max={max}"); // для проверки выводим min max
+//   return max - min;
+// }
 
-void PrintDoubleResult(double[] array, double result, int accuracy = 3)
-{
-  for (int i = 0; i < array.Length; i++)
-  {
-    Console.Write($"{(i == 0 ? "[" : "")}{Math.Round(array[i], accuracy)}{(i == array.Length - 1 ? $"] -> {Math.Round(result, accuracy)}" : ", ")}");
-  }
-  Console.WriteLine();
-}
+// void PrintDoubleResult(double[] array, double result, int accuracy = 3)
+// {
+//   for (int i = 0; i < array.Length; i++)
+//   {
+//     Console.Write($"{(i == 0 ? "[" : "")}{Math.Round(array[i], accuracy)}{(i == array.Length - 1 ? $"] -> {Math.Round(result, accuracy)}" : ", ")}");
+//   }
+//   Console.WriteLine();
+// }
 
 
-Console.Write("Input array size: ");
-int size = Convert.ToInt32(Console.ReadLine());
-Console.Write("Input minimal value of array element: ");
-double min = Convert.ToDouble(Console.ReadLine());
-Console.Write("Input maximal value of array element: ");
-double max = Convert.ToDouble(Console.ReadLine());
+// Console.Write("Input array size: ");
+// int size = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Input minimal value of array element: ");
+// double min = Convert.ToDouble(Console.ReadLine());
+// Console.Write("Input maximal value of array element: ");
+// double max = Convert.ToDouble(Console.ReadLine());
 
-double[] array = CreateRandomDoubleArray(size, min, max);
+// double[] array = CreateRandomDoubleArray(size, min, max);
 
-PrintDoubleResult(array, MinMaxDiff(array));
+// PrintDoubleResult(array, MinMaxDiff(array));
