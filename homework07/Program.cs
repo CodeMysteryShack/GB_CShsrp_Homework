@@ -117,41 +117,33 @@ double GetRandomDoubleNumber(double minimum, double maximum)
 // 17 -> такого числа в массиве нет
 
 
-// int FindElementInArray(int[,] arr, int row, int col)
+// void FindElementInArray(int[,] arr, int row, int col)
 // {
-//   for (int i = 0; i < arr.GetLength(0); i++)
+//   if (row < 0 || row > arr.GetLength(0) - 1 || col < 0 || col > arr.GetLength(1) - 1)
 //   {
-//     for (int j = 0; j < arr.GetLength(1); j++)
-//     {
-//       if (i == row && j == col) return arr[i, j];
-//     }
+//     Console.WriteLine($"There is no element [{row}, {col}] in array");
 //   }
-//   return 0;
+//   else
+//   {
+//     Console.WriteLine($"Element [{row}, {col}] is {arr[row, col]}");
+//   }
 // }
 
 // Console.Write("Input number of rows in array: ");
 // int m = Convert.ToInt32(Console.ReadLine());
 // Console.Write("Input number of columns in array: ");
 // int n = Convert.ToInt32(Console.ReadLine());
-// Console.Write("Input number of row to find: ");
 
 // int[,] array = new int[m, n];
 // Fill2DArray(array);
 
+// Console.Write("Input number of row to find: ");
 // int row = Convert.ToInt32(Console.ReadLine());
 // Console.Write("Input number of column to find: ");
 // int col = Convert.ToInt32(Console.ReadLine());
 
 // Print2DArray(array);
-
-// if (row > array.GetLength(0) || col > array.GetLength(1))
-// {
-//   Console.WriteLine($"There is no element [{row}, {col}] in array");
-// }
-// else
-// {
-//   Console.WriteLine($"Element [{row}, {col}] is {FindElementInArray(array, row, col)}");
-// }
+// FindElementInArray(array, row, col);
 
 // =============================================================
 
